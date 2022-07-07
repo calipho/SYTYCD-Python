@@ -6,7 +6,8 @@ menu = {
     "tea": 0.900,
     "bottled water": 0.750
 }
-original_flavors = ["vanilla", "chocolate", "strawberry", "caramel", "raspberry"]
+original_flavors = ["vanilla", "chocolate",
+                    "strawberry", "caramel", "raspberry"]
 original_price = 2
 signature_price = 2.750
 
@@ -21,10 +22,8 @@ def print_menu():
     Print the items in the menu dictionary.
     """
     print("Our menu:")
-    for item in cupcake_menu:
+    for item in menu:
         print("- \"%s\" (KD %s)" % (item, menu[item]))
-
-
 
 
 def print_originals():
@@ -33,7 +32,8 @@ def print_originals():
     """
     print("Our original flavor cupcakes (KD %s each):" % original_price)
     for item in original_flavors:
-    print("- \"%s\"" % item)
+
+        print("- \"%s\"" % item)
 
 
 def print_signatures():
@@ -64,8 +64,9 @@ def get_order():
     Repeatedly ask customer for order until they end their order by typing "Exit".
     """
     order_list = []
-    order = input("What's your order? (Enter the exact spelling of the item you want. Type 'Exit' to end your order.)\n")
-    while order.lowercase() != "exit":
+    order = input(
+        "What's your order? (Enter the exact spelling of the item you want. Type 'Exit' to end your order.)\n")
+    while order != "exit":
         if is_valid_order(order):
             order_list.append(order)
         order = input()
